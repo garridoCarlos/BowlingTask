@@ -30,7 +30,7 @@ namespace BowlingTests
 
             //Arrange
             int expected = 300;
-            int[] rolls = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+            int[] rolls = { 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 10, 10 };
             List<int> resultRolls = new List<int>(rolls);
             Score playerScore = new Score();
 
@@ -46,7 +46,7 @@ namespace BowlingTests
         {
 
             //Arrange
-            int expected = 135;
+            int expected = 150;
             int[] rolls = { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
             List<int> resultRolls = new List<int>(rolls);
             Score playerScore = new Score();
@@ -55,7 +55,7 @@ namespace BowlingTests
             int actual = playerScore.CalculatePoints(resultRolls);
 
             //Assert
-            Assert.AreEqual(expected, actual, "Score is not 135");
+            Assert.AreEqual(expected, actual, "Score is not 150");
         }
     }
 }

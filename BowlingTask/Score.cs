@@ -17,9 +17,9 @@ namespace BowlingTask
             int rawPoints = arrayIntRolls.Sum();
             int extraPoints = 0;
 
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < arrayIntRolls.Length; i++)
             {
-                if (i % 2 == 0 & arrayIntRolls[i] == 10)
+                if (i % 2 == 0 & arrayIntRolls[i] == 10 & i < 16)
                 {
 
                     if (arrayIntRolls[i + 2] == 10)
@@ -42,11 +42,15 @@ namespace BowlingTask
                         arrayIntRolls[19];
             }
 
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < arrayIntRolls.Length; i++)
             {
-                if (i % 2 == 0 & arrayIntRolls[i] != 10 & arrayIntRolls[i] + arrayIntRolls[i + 1] == 10)
+                if (i < 18)
                 {
-                    extraPoints = extraPoints + arrayIntRolls[i + 2];
+                    if (i % 2 == 0 & arrayIntRolls[i] != 10 & arrayIntRolls[i] + arrayIntRolls[i + 1] == 10)
+                    {
+                        extraPoints = extraPoints + arrayIntRolls[i + 2];
+                    }
+
                 }
             }
 
@@ -86,10 +90,10 @@ namespace BowlingTask
             {
                 if (i % 2 == 0)
                 {
-                    if (stringRolls[i] == "10")
+                    if (stringRolls[i] == "10" & i < 19)
                     {
                         stringRolls[i] = "X";
-                        if (i != 18)
+                        if (i < 18)
                         {
                             stringRolls[i + 1] = " ";
                         }

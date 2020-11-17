@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BowlingTask
@@ -26,10 +27,15 @@ namespace BowlingTask
                 int firstRoll = listRolls.First();
                 listRolls.RemoveAt(0);
 
-                if (firstRoll == 10)
+                if (firstRoll == 10 & resultRolls.Count < 18)
                 {
                     resultRolls.Add(10);
                     resultRolls.Add(0);
+
+                }
+                else if (firstRoll == 10 & resultRolls.Count >= 18)
+                {
+                    resultRolls.Add(10);
 
                 }
                 else
@@ -48,11 +54,6 @@ namespace BowlingTask
             while (resultRolls.Count() < 21)
             {
                 resultRolls.Add(0);
-            }
-
-            if (resultRolls.Count() > 21)
-            {
-                resultRolls.RemoveAt(19);
             }
 
             return resultRolls;
